@@ -425,6 +425,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"health_fb/Preview Content\"";
 				DEVELOPMENT_TEAM = 8APR34WHWN;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -463,6 +464,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"health_fb/Preview Content\"";
 				DEVELOPMENT_TEAM = 8APR34WHWN;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
