@@ -49,6 +49,7 @@
 		CA7C19E429E84D2600044A21 /* health_fbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = health_fbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7C19E829E84D2600044A21 /* health_fbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = health_fbUITests.swift; sourceTree = "<group>"; };
 		CA7C19EA29E84D2600044A21 /* health_fbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = health_fbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CA7C19F729F18A8B00044A21 /* health_fbRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = health_fbRelease.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		CA7C19C629E84D2500044A21 /* health_fb */ = {
 			isa = PBXGroup;
 			children = (
+				CA7C19F729F18A8B00044A21 /* health_fbRelease.entitlements */,
 				CA7C19C729E84D2500044A21 /* health_fbApp.swift */,
 				CA7C19C929E84D2500044A21 /* Persistence.swift */,
 				CA7C19CE29E84D2500044A21 /* ContentView.swift */,
@@ -462,7 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = health_fb/health_fb.entitlements;
+				CODE_SIGN_ENTITLEMENTS = health_fb/health_fbRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"health_fb/Preview Content\"";

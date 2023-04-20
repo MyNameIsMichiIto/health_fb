@@ -18,8 +18,22 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
+    
+    
+    
     var body: some View {
-        Text("こんにちは")
+        VStack{
+            HStack{
+                Text("歩数")
+                Text("100歩")
+            }
+            HStack{
+                Text("テスト")
+                Text("テスト２")
+            }
+            
+        }
+        
         
         
             .onAppear(){
@@ -40,6 +54,26 @@ struct ContentView: View {
             healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
                 if !success {
                     // Handle the error here.
+                    print("ここまじかよ\(error)")
+                }else{
+                    let today = Date()
+                    let yesterday = Calendar.current.date(byAdding: .day,value: -1, to: Date())!
+                    let yesterday2 = Calendar.current.date(byAdding: .day,value: -10, to: Date())!
+                    // 健康データ読み出し
+                    let query = HKSampleQuery(sampleType: HKSampleType.quantityType(forIdentifier: .stepCount)!,
+                                              predicate: HKQuery.predicateForSamples(withStart: yesterday2, end: yesterday, options: []),
+                                              limit: HKObjectQueryNoLimit,
+                                              sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: true)]){ (query, results, error) in
+                        
+                        if results is [HKQuantitySample] {
+                            // 当該箇所で取得したデータを表示用に加工等の処理
+                            
+                            print("ここは通ってる")
+                        }else{
+                            print("ここ通ってがっかり\(error)それと\(query)それと\(results)")
+                        }
+                    }
+                    healthStore.execute(query)
                 }
             }
             
