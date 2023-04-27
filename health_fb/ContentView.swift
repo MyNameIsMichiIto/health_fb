@@ -17,22 +17,30 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
     
-    
+    @State var walking_str: String = ""
     
     var body: some View {
-        VStack{
-            HStack{
-                Text("歩数")
-                Text("100歩")
-            }
-            HStack{
-                Text("テスト")
-                Text("テスト２")
+        
+        NavigationView{
+            VStack{
+                HStack{
+                    Text("歩数")
+                    Text("\(self.walking_str)歩")
+                }
+                HStack{
+                    Text("テスト")
+                    Text("テスト２")
+                }
+                NavigationLink(destination: SecondView()){
+                    Text("次の画面へ")
+                }
             }
             
+            .navigationTitle("firstView")
         }
+        
+        
         
         
         
@@ -58,12 +66,11 @@ struct ContentView: View {
             healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
                 if !success {
                     // Handle the error here.
-                    print("ここまじかよ\(error)")
                 }else{
                     
                     var sampleArray: [Double] = []
                     /// 取得したいサンプルデータの期間の開始日を指定する。（今回は７日前の日付を取得する。）
-                    let sevenDaysAgo = Calendar.current.date(byAdding: DateComponents(day: -7), to: Date())!
+                    let sevenDaysAgo = Calendar.current.date(byAdding: DateComponents(day: 0), to: Date())!
                     let startDate = Calendar.current.startOfDay(for: sevenDaysAgo)
                     
                     /// サンプルデータの検索条件を指定する。（フィルタリング）
@@ -111,10 +118,12 @@ struct ContentView: View {
                                 /// 取得した歩数を配列に格納する。
                                 sampleArray.append(floor(stepValue))
                                 print("sampleArray", sampleArray)
+                                self.walking_str = String(stepValue)
                             } else {
                                 // No Data
                                 sampleArray.append(0.0)
                                 print("sampleArray", sampleArray)
+                                
                             }
                         }
                     }

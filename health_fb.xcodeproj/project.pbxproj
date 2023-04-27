@@ -16,6 +16,7 @@
 		CA7C19DF29E84D2600044A21 /* health_fbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7C19DE29E84D2600044A21 /* health_fbTests.swift */; };
 		CA7C19E929E84D2600044A21 /* health_fbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7C19E829E84D2600044A21 /* health_fbUITests.swift */; };
 		CA7C19EB29E84D2600044A21 /* health_fbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7C19EA29E84D2600044A21 /* health_fbUITestsLaunchTests.swift */; };
+		CA7C19F929FAC84700044A21 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7C19F829FAC84700044A21 /* SecondView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		CA7C19E829E84D2600044A21 /* health_fbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = health_fbUITests.swift; sourceTree = "<group>"; };
 		CA7C19EA29E84D2600044A21 /* health_fbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = health_fbUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CA7C19F729F18A8B00044A21 /* health_fbRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = health_fbRelease.entitlements; sourceTree = "<group>"; };
+		CA7C19F829FAC84700044A21 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				CA7C19D229E84D2500044A21 /* health_fb.entitlements */,
 				CA7C19CB29E84D2500044A21 /* health_fb.xcdatamodeld */,
 				CA7C19D329E84D2500044A21 /* Preview Content */,
+				CA7C19F829FAC84700044A21 /* SecondView.swift */,
 			);
 			path = health_fb;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA7C19C829E84D2500044A21 /* health_fbApp.swift in Sources */,
+				CA7C19F929FAC84700044A21 /* SecondView.swift in Sources */,
 				CA7C19CA29E84D2500044A21 /* Persistence.swift in Sources */,
 				CA7C19CF29E84D2500044A21 /* ContentView.swift in Sources */,
 				CA7C19CD29E84D2500044A21 /* health_fb.xcdatamodeld in Sources */,
