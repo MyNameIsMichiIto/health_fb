@@ -6,15 +6,30 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct SecondView: View {
+    
+    @State private var taiju: String
+    @State private var sintyo: String
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct SecondView_Previews: PreviewProvider {
-    static var previews: some View {
-        SecondView()
+        
+        VStack{
+            
+            TextField("体重", text: $taiju)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            TextField("身長", text: $sintyo)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            Button("登録"){
+                
+                
+            }
+            
+        }
+        
     }
 }

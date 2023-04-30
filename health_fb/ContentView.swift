@@ -5,9 +5,13 @@
 //  Created by 伊藤倫 on 2023/04/13.
 //
 
+import UIKit
 import SwiftUI
 import CoreData
 import HealthKit
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseStorage
 
 @available(macOS 13.0, *)
 struct ContentView: View {
@@ -19,11 +23,22 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     @State var walking_str: String = ""
+    @State private var no_auth_flag: Bool = false
+    @State private var select_image: UIImage?
     
     var body: some View {
         
         NavigationView{
             VStack{
+                
+                if let image = self.select_image{
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                }else{
+                    Text("No Image")
+                }
+                
                 HStack{
                     Text("歩数")
                     Text("\(self.walking_str)歩")
@@ -41,12 +56,30 @@ struct ContentView: View {
         }
         
         
-        
-        
-        
             .onAppear(){
+                self.authCheck()
                 self.health_data()
             }
+            .sheet(isPresented: $no_auth_flag,
+                   content: {
+                AuthView()
+            })
+        
+    }
+    
+    func imageUpload(){
+    }
+    
+    func authCheck(){
+        if let currentUser = Auth.auth().currentUser{
+            
+        }else{
+            
+            self.no_auth_flag = true
+            
+            
+        }
+        
     }
     
     func health_data(){
