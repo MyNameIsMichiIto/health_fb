@@ -10,11 +10,11 @@ import FirebaseFirestore
 
 struct SecondView: View {
     
-    @State private var taiju: String
-    @State private var sintyo: String
+    
+    @State private var taiju: String = ""
+    @State private var sintyo: String = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
         VStack{
             
@@ -25,6 +25,20 @@ struct SecondView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding()
             Button("登録"){
+                
+                let db = Firestore.firestore()
+                let userRef = db.collection("users").document()
+                let data: [String:Any] = ["taiju": self.taiju,
+                                          "sintyo": self.sintyo]
+                
+                userRef.setData(data){ error in
+                    if let error = error{
+                        print("エラー\(error)")
+                    }else{
+                    }
+                    
+                }
+                
                 
                 
             }
